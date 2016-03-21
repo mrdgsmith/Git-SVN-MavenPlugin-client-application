@@ -1,4 +1,13 @@
 *.class
+target/
+.classpath
+.project
+.settings/
+.idea/
+*.iml
+*.ipr
+*.iws
+*.marker
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
