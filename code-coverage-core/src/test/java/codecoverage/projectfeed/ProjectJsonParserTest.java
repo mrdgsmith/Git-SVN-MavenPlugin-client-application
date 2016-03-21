@@ -33,8 +33,8 @@ public class ProjectJsonParserTest extends TestCase {
     public void whenValidJsonReceivedThenReturnDomainObject() throws Exception {
         final File jsonFile = createJsonFile();
         final ProjectInformation project = projectsParserUnderTest.parseJsonFile(jsonFile);
-        assertThat(project.getProjects(), hasItems(new Project("halo", "https://git.sns.sky.com/team-hiro/halo.git", "master", "git"),
-                new Project("sns-test", "http://subversion.sns.sky.com/svn/netstream/trunk/sns-test", "HEAD", "svn")));
+        assertThat(project.getProjects(), hasItems(new Project("test1", "https://git.changeme.com/team1/test1.git", "master", "git"),
+                new Project("test2", "http://subversion.changeme.com/sns-test", "HEAD", "svn")));
     }
 
     private File createJsonFile() throws IOException {
@@ -42,13 +42,13 @@ public class ProjectJsonParserTest extends TestCase {
         final Map<String, String> project1 = new HashMap<>();
         final Map<String, String> project2 = new HashMap<>();
 
-        project1.put("name", "halo");
-        project1.put("url", "https://git.sns.sky.com/team-hiro/halo.git");
+        project1.put("name", "test1");
+        project1.put("url", "https://git.changeme.com/team1/test1.git");
         project1.put("version", "master");
         project1.put("repository type", "git");
 
-        project2.put("name", "sns-test");
-        project2.put("url", "http://subversion.sns.sky.com/svn/netstream/trunk/sns-test");
+        project2.put("name", "test2");
+        project2.put("url", "http://subversion.changeme.com/sns-test");
         project2.put("version", "HEAD");
         project2.put("repository type", "svn");
 
