@@ -308,7 +308,7 @@ public class CodeCoverageRunner {
 
     private void checkoutProjects() {
         try {
-            final ProjectInformation projectInformation = createPhoneInformation(getJsonFile());
+            final ProjectInformation projectInformation = createProjectInformation(getJsonFile());
             checkoutGitRepository(projectInformation);
             checkoutSvnRepository(projectInformation);
         } catch (final IOException ex) {
@@ -317,7 +317,7 @@ public class CodeCoverageRunner {
         optionsToChoose();
     }
 
-    private ProjectInformation createPhoneInformation(final File jsonFile) throws IOException {
+    private ProjectInformation createProjectInformation(final File jsonFile) throws IOException {
         final ProjectJsonParser projectJsonParser = new ProjectJsonParser(new ObjectMapper());
         try {
             final ProjectInformation projectInformation = projectJsonParser.parseJsonFile(jsonFile);
